@@ -5,7 +5,15 @@
   <title>Login Page</title>
 </head>
 <body>
-    
+ 
+
+  <% if (errorMessage) { %>
+    <p class="alert alert-danger " role="alert">
+      <%= errorMessage %>
+    </p>
+  <% } %>
+ 
+
     <form action="/login" method="POST" class="container  border border-2 p-5 m-5">
       <h2>Login</h2>
     <div class="mb-3">

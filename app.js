@@ -31,14 +31,14 @@ app.get("/",(req,res)=>{
     }
 })
 
-app.post('/login',(req,res)=>{
+app.post('/login',(req,res,err)=>{
     const { user_name,password } = req.body;
-
+    let err0r="incorrect username or password"
     if(user_name===username && password===password2){
         req.session.isLoggedIn=true;
         res.redirect("/")
     }else{
-        res.render("login.ejs")
+        res.render("login.ejs",{ errorMessage: err+ 'Incorrect username or password' })
     }
 })
 
